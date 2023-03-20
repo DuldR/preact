@@ -1,4 +1,5 @@
 defmodule PhoenixReactWeb.Router do
+  alias Mix.Tasks.Webapp
   use PhoenixReactWeb, :router
 
   pipeline :browser do
@@ -18,6 +19,13 @@ defmodule PhoenixReactWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  scope "/app", PhoenixReactWeb do
+    pipe_through :browser
+
+    get "/", WebappController, :index
+    get "/*path", WebappController, :index
   end
 
   # Other scopes may use custom stacks.
