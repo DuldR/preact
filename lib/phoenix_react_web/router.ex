@@ -22,8 +22,6 @@ defmodule PhoenixReactWeb.Router do
   end
 
   scope "/app", PhoenixReactWeb do
-    pipe_through :browser
-
     get "/", WebappController, :index
     get "/*path", WebappController, :index
   end
