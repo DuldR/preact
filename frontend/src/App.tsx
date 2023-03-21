@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter basename="app">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/api" element={<ApiPage/>} />
+        <Route path="/set" element={<ApiPage/>} />
         <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </BrowserRouter>
@@ -43,11 +43,9 @@ function HomePage() {
 
 function ApiPage() {
   let esketit = () => {
-    fetch("/bruh/hello", {
+    fetch("/api/hello", {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      }})
+      })
     .then((response) => response.json())
     .then((data) => console.log(data))
   }
