@@ -33,6 +33,7 @@ function SettingsPage() {
 function HomePage() {
   const style = { padding : "8px" }
 
+
   return (
     <div style={style} >
       <h1> Home Page Yall </h1>
